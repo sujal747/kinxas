@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Cart – किन्छस्</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .cart-container {
+      padding: 2rem;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 1rem;
+    }
+
+    .cart-item img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+    }
+
+    .cart-summary {
+      margin-top: 2rem;
+      font-weight: bold;
+    }
+
+    .delete-btn {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 14px;
+      border-radius: 5px;
+    }
+
+    .delete-btn:hover {
+      background-color: darkred;
+    }
+
+    .buy-btn {
+      background-color: green;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+
+    .buy-btn:hover {
+      background-color: darkgreen;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <a href="#">
+      <div class="logo">किन्छस्</div>
+    </a>
+    <input type="text" class="search-input" placeholder="What are you looking for?">
+    <div class="nav-buttons">
+      <a href="index.html"><button class="back-home">⬅ Back to Home</button></a>
+    </div>
+  </nav>
+
+  <div class="cart-container" id="cartItems">
+    <h2>Your Cart</h2>
+    <!-- Cart items will be injected here -->
+  </div>
+
+  <script>
+    const cartContainer = document.getElementById("cartItems");
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (cart.length === 0) {
+      cartContainer.innerHTML += "<p>Your cart is empty 🛒</p>";
+    } else {
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        // Ensure the price is a number before calculating
+        const price = parseFloat(item.price);
+        if (isNaN(price)) {
+          console.error(`Invalid price for product ${item.name}`);
+          return; // Skip this product if the price is invalid
+        }
+
+        const subtotal = price * item.quantity;
+        total += subtotal;
+
+        const itemDiv = document.createElement('div');
+        itemDiv.className = "cart-item";
+
+        itemDiv.innerHTML = `
+          <img src="${item.image}" alt="${item.name}">
+          <div>
+            <h4>${item.name}</h4>
+            <p>Price: Rs ${price}</p>
+            <p>Quantity: ${item.quantity}</p>
+            <p>Subtotal: Rs ${subtotal}</p>
+          </div>
+          <button class="delete-btn" onclick="deleteItem(${index})">Delete</button>
+        `;
+        cartContainer.appendChild(itemDiv);
+      });
+
+      const summary = document.createElement("div");
+      summary.className = "cart-summary";
+      summary.innerHTML = `Total: Rs ${total}`;
+      cartContainer.appendChild(summary);
+
+      // Add Buy button
+      const buyButton = document.createElement("button");
+      buyButton.className = "buy-btn";
+      buyButton.innerHTML = "Buy Now";
+      buyButton.onclick = () => completePurchase(total);
+      cartContainer.appendChild(buyButton);
+    }
+
+    function deleteItem(index) {
+      // Remove item from the cart array
+      cart.splice(index, 1);
+
+      // Update the localStorage with the modified cart
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      // Refresh the cart display
+      location.reload(); // Reload the page to reflect the changes
+    }
+
+    function completePurchase(total) {
+      if (cart.length === 0) {
+        alert("Your cart is empty. Please add items to proceed with the purchase.");
+        return;
+      }
+
+      alert(`Thank you for your purchase! Total amount: Rs ${total}`);
+
+      // Clear the cart from localStorage
+      localStorage.removeItem('cart');
+      location.reload(); // Reload to refresh the page
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,509 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #1f2937;
+  line-height: 1.6;
+}
+a {
+  text-decoration: none; 
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* kinxas logo start */
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1D4ED8;
+  letter-spacing: -1px;
+  padding-right: 20px;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1rem;
+  }
+}
+/* kinxas logo end */
+
+.search-input {
+  width: 45%;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+
+.search-input:focus {
+  border-color: #1D4ED8;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(29, 78, 216, 0.3);
+}
+
+
+@media (max-width: 480px) {
+  .search-input {
+    display: none;
+  }
+
+  .search-icon {
+    display: inline-block;
+    background: url('https://img.icons8.com/?size=100&id=12773&format=png&color=000000') center no-repeat;
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    cursor: pointer;
+  }
+}
+.nav-buttons {
+  display: flex;
+  align-items: center; 
+}
+
+.nav-buttons button {
+  padding: 0.5rem 1rem;
+  margin-left: 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.login {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+  border-radius: 999px;
+  transition: background-color 0.3s ease;
+}
+
+.login:hover {
+  background-color: #f3f4f6;
+}
+
+.cart {
+  color: white;
+  background-color: #1D4ED8;
+  position: relative;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 999px;
+}
+
+.cart-icon-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+#cartIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  visibility: hidden; /* Initially hidden until cart count is updated */
+}
+
+@media (max-width: 768px) {
+  .login {
+    padding: 0.4rem 0.8rem;
+    font-size: 12px;
+  }
+
+  .cart {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .cart-icon-container {
+    padding-left: 8px;
+  }
+
+  #cartIcon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .cart-count {
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login {
+    padding: 0.3rem 0.6rem;
+    font-size: 10px;
+  }
+
+  .cart {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .cart-icon-container {
+    padding-left: 6px;
+  }
+
+  #cartIcon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cart-count {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+  }
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+  overflow-y: auto;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form inputs and buttons */
+input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+button[type="submit"], .google-login-btn {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  background-color: #1D4ED8;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button[type="submit"]:hover, .google-login-btn:hover {
+  background-color: #2563EB;
+}
+
+/* Google Login Button Styling */
+.google-login-btn {
+  background-color: #db4437;
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.google-login-btn:hover {
+  background-color: #c1351d;
+}
+
+
+/* Hero Slider */
+#slider {
+  width: 90%;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+#slider figure {
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  animation: 20s slider infinite;
+}
+
+#slider figure img {
+  float: left;
+  width: 20%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+#slider figure img:hover {
+  transform: scale(1.05);
+}
+
+@keyframes slider {
+  0%, 15% { left: 0; }
+  20%, 35% { left: -100%; }
+  40%, 55% { left: -200%; }
+  60%, 75% { left: -300%; }
+  80%, 95% { left: -400%; }
+  100% { left: 0; }
+}
+
+/* Featured Categories */
+.featured-categories {
+  padding: 3rem 2rem;
+  background-color: #f9fafb;
+}
+
+.featured-categories h3 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1D4ED8;
+  margin-bottom: 2rem;
+}
+@media (max-width: 768px) {
+  .featured-categories h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-categories h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.category-card {
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease;
+  position: relative;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+}
+
+.category-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.category-name {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  backdrop-filter: blur(2px);
+}
+
+/* Featured Products */
+.featured-products {
+  padding: 4rem 2rem;
+  background-color: #f9fafb;
+}
+
+.featured-products h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  color: #1D4ED8;
+}
+@media (max-width: 768px) {
+  .featured-products h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-products h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.product-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.8rem;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  text-align: center;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ef4444;
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.product-name {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.rating {
+  color: #ffbb00;
+  margin-bottom: 0.4rem;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #007c42;
+  margin-bottom: 0.8rem;
+}
+
+.product-card button {
+  padding: 0.5rem 1rem;
+  background-color: #1D4ED8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.product-card button:hover {
+  background-color: #2563eb;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1rem;
+  color: #6b7280;
+  background-color: #f3f4f6;
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+  .featured-products {
+    padding: 1rem;
+  }
+
+  .slides img {
+    height: 250px;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  margin: 10% auto;
+  width: 300px;
+  border-radius: 10px;
+}
