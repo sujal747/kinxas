@@ -30,3 +30,9 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+window.addEventListener("click", (e) => {
+  const modal = document.getElementById("productModal");
+  if (e.target === modal) {
+    closeProductModal();
+  }
+});
