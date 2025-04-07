@@ -1,3 +1,4 @@
+
 let time = 3600;
 const countdown = document.getElementById('countdown');
 
@@ -118,9 +119,9 @@ function updateCartCount() {
 
 
 function toggleSearch() {
-  document.querySelector('.search-input').style.display = 'block'; // Show input
-  document.querySelector('.search-icon').style.display = 'none';   // Hide icon
-  document.querySelector('.search-input').focus();                // Focus on the input
+  document.querySelector('.search-input').style.display = 'block'; 
+  document.querySelector('.search-icon').style.display = 'none';   
+  document.querySelector('.search-input').focus();              
 }
 
 
