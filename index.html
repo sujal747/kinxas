@@ -86,6 +86,50 @@
     </div>
   </div>
 
+  <!-- Product Modal -->
+<div id="productModal" class="product-modal">
+  <div class="product-modal-content">
+    <span class="close-modal" onclick="closeProductModal()">&times;</span>
+    
+    <div class="product-details">
+      <div class="product-images">
+        <div class="main-image">
+          <img id="modalProductImg" src="" alt="Product Image">
+        </div>
+        <div class="image-thumbnails" id="imageThumbnails">
+          <!-- Thumbnails will be added dynamically -->
+        </div>
+      </div>
+      
+      <div class="product-info">
+        <h2 id="modalProductName"></h2>
+        <div class="product-rating" id="modalProductRating"></div>
+        <div class="product-price" id="modalProductPrice"></div>
+        <div class="product-discount" id="modalProductDiscount"></div>
+        
+        <div class="product-description" id="modalProductDescription">
+          <!-- Description will be added dynamically -->
+        </div>
+        
+        <div class="quantity-selector">
+          <button id="decreaseQuantity">-</button>
+          <input type="number" id="productQuantity" value="1" min="1" max="10">
+          <button id="increaseQuantity">+</button>
+        </div>
+        
+        <button id="modalAddToCartBtn" class="add-to-cart-modal">Add to Cart</button>
+      </div>
+    </div>
+    
+    <div class="product-reviews">
+      <h3>Customer Reviews</h3>
+      <div id="customerReviews">
+        <!-- Reviews will be added dynamically -->
+      </div>
+    </div>
+  </div>
+</div>
+
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 किन्छस् – Everyone Buys Here ❤️</p>
@@ -94,6 +138,8 @@
   <script src="script.js"></script>
   <script src="products.js"></script>
   <script src="app.js"></script>
+
+  
 
 </body>
 

@@ -7,8 +7,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
     card.innerHTML = `
       <span class="discount-badge">${product.discount}</span>
-      <img src="${product.image}" alt="${product.name}" />
-      <h4 class="product-name">${product.name}</h4>
+      <div class="product-image" onclick="openProductModal(${product.id})">
+        <img src="${product.image}" alt="${product.name}" />
+      </div>
+      <h4 class="product-name" onclick="openProductModal(${product.id})">${product.name}</h4>
       <div class="rating">${"⭐".repeat(product.rating)}${"☆".repeat(5 - product.rating)}</div>
       <div class="price">Rs. ${product.price}</div>
       <button class="add-to-cart-btn" data-id="${product.id}">Add to Cart</button>
@@ -21,7 +23,8 @@ window.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".add-to-cart-btn");
 
   buttons.forEach((btn) => {
-    btn.addEventListener("click", function () {
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation(); // Prevent modal from opening when clicking the button
       const productId = parseInt(this.getAttribute("data-id"));
       addToCart(productId); // This uses the function from script.js
     });

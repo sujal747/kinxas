@@ -675,24 +675,307 @@ const products = [
 
 const reviews = [
   {
-    name: "Ramesh Bhandari",
-    image: "assets/reviewers/user1.jpg",
-    rating: 4,
-    review: "Great product, loved the quality!"
-  },
-  {
-    name: "Sita Sharma",
-    image: "assets/reviewers/user2.jpg",
+    name: "Rajesh Kumar",
+    image: "https://randomuser.me/api/portraits/men/3.jpg",
     rating: 5,
-    review: "Absolutely worth the price!"
+    review: "This gadget is exceptional! I’m extremely satisfied with the quality and performance. Highly recommend!"
   },
   {
-    name: "Hari Thapa",
-    image: "assets/reviewers/user3.jpg",
+    name: "Neha Patel",
+    image: "https://randomuser.me/api/portraits/women/4.jpg",
     rating: 3,
-    review: "Good, but packaging could be better."
+    review: "Mujhe yeh product thoda average laga. Looks good, but expected more."
+  },
+  {
+    name: "Anil Yadav",
+    image: "https://randomuser.me/api/portraits/men/5.jpg",
+    rating: 1,
+    review: "What a waste of money! Don’t buy it. It’s just trash."
+  },
+  {
+    name: "Priya Sharma",
+    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    rating: 5,
+    review: "I can’t stop thinking about this dress! It’s perfect, I just love it. Feels like it was made for me ❤️"
+  },
+  {
+    name: "Sanjay Verma",
+    image: "https://randomuser.me/api/portraits/men/7.jpg",
+    rating: 4,
+    review: "This gadget is great, but it makes me want to do... naughty things 😏"
+  },
+  {
+    name: "Disha Rai",
+    image: "https://randomuser.me/api/portraits/women/8.jpg",
+    rating: 5,
+    review: "I’m obsessed with this product. I want it, need it, and can’t live without it. It’s like it owns me."
+  },
+  {
+    name: "David Williams",
+    image: "https://randomuser.me/api/portraits/men/9.jpg",
+    rating: 1,
+    review: "This product is absolute garbage! Worst thing I’ve ever bought. F***ing useless!"
+  },
+  {
+    name: "Ashish Kumar",
+    image: "https://randomuser.me/api/portraits/men/11.jpg",
+    rating: 2,
+    review: "Yeh product itna acha nahi tha. Mein thoda disappointed hoon."
+  },
+  {
+    name: "Sneha Gupta",
+    image: "https://randomuser.me/api/portraits/women/12.jpg",
+    rating: 4,
+    review: "It’s a good accessory, but I’d rather have something else for... well, personal use 😉"
+  },
+  {
+    name: "Kiran Thapa",
+    image: "https://randomuser.me/api/portraits/women/13.jpg",
+    rating: 5,
+    review: "Yo product ekdam ramro cha! Malai yo jacket dherai man parchha."
+  },
+  {
+    name: "Vikram Singh",
+    image: "https://randomuser.me/api/portraits/men/14.jpg",
+    rating: 3,
+    review: "It’s decent headphones, but sound could be better. Thik thak hai."
+  },
+  {
+    name: "Maya Gurung",
+    image: "https://randomuser.me/api/portraits/women/15.jpg",
+    rating: 1,
+    review: "Yo shoes naramro cha! Ekdam waste of paisa."
+  },
+  {
+    name: "Emily Johnson",
+    image: "https://randomuser.me/api/portraits/women/16.jpg",
+    rating: 5,
+    review: "I love this product! It’s amazing, worth every penny!"
+  },
+  {
+    name: "Rohit Joshi",
+    image: "https://randomuser.me/api/portraits/men/17.jpg",
+    rating: 2,
+    review: "Yeh shirt ka fabric thoda cheap lagta hai. Not happy."
+  },
+  {
+    name: "Anjali Lama",
+    image: "https://randomuser.me/api/portraits/women/18.jpg",
+    rating: 4,
+    review: "Yo bag ramro cha, tara thodi mahango lagyo."
+  },
+  {
+    name: "Michael Brown",
+    image: "https://randomuser.me/api/portraits/men/19.jpg",
+    rating: 1,
+    review: "This is the worst product ever. Broke in two days!"
+  },
+  {
+    name: "Pooja Desai",
+    image: "https://randomuser.me/api/portraits/women/20.jpg",
+    rating: 5,
+    review: "I’m in love with this saree! It’s so gorgeous, can’t stop wearing it ❤️"
+  },
+  {
+    name: "Suresh Rana",
+    image: "https://randomuser.me/api/portraits/men/21.jpg",
+    rating: 3,
+    review: "It’s okay watch, does the job but nothing special."
+  },
+  {
+    name: "Laxmi Shrestha",
+    image: "https://randomuser.me/api/portraits/women/22.jpg",
+    rating: 2,
+    review: "Yo product normal cha. Kehi special chaina."
+  },
+  {
+    name: "Arjun Malhotra",
+    image: "https://randomuser.me/api/portraits/men/23.jpg",
+    rating: 4,
+    review: "This phone case is cool, fits perfect. Thoda costly hai lekin."
+  },
+  {
+    name: "Tara Devi",
+    image: "https://randomuser.me/api/portraits/women/24.jpg",
+    rating: 5,
+    review: "Malai yo perfume ekdam pasand cha! Smells amazing."
+  },
+  {
+    name: "John Carter",
+    image: "https://randomuser.me/api/portraits/men/25.jpg",
+    rating: 1,
+    review: "Total waste of cash. This dumbass product didn’t even work!"
+  },
+  {
+    name: "Riya Kapoor",
+    image: "https://randomuser.me/api/portraits/women/26.jpg",
+    rating: 5,
+    review: "This necklace is stunning! I feel like a queen wearing it ❤️"
+  },
+  {
+    name: "Deepak Shah",
+    image: "https://randomuser.me/api/portraits/men/27.jpg",
+    rating: 3,
+    review: "Yeh charger works fine, par slow hai thodi."
+  },
+  {
+    name: "Sunita Magar",
+    image: "https://randomuser.me/api/portraits/women/28.jpg",
+    rating: 2,
+    review: "Yo scarf thik cha, tara color fade bhayo jaldi."
+  },
+  {
+    name: "Amitabh Rai",
+    image: "https://randomuser.me/api/portraits/men/29.jpg",
+    rating: 4,
+    review: "This wallet is solid, paisa wasool hai!"
+  },
+  {
+    name: "Sarah Davis",
+    image: "https://randomuser.me/api/portraits/women/30.jpg",
+    rating: 5,
+    review: "OMG, this top is everything! So stylish and comfy!"
+  },
+  {
+    name: "Hari Bahadur",
+    image: "https://randomuser.me/api/portraits/men/31.jpg",
+    rating: 1,
+    review: "Yo belt khattam cha! Don’t buy it, total waste."
+  },
+  {
+    name: "Kavita Mehra",
+    image: "https://randomuser.me/api/portraits/women/32.jpg",
+    rating: 4,
+    review: "Yeh earrings pretty hai, par thodi heavy lagti hai."
+  },
+  {
+    name: "James Lee",
+    image: "https://randomuser.me/api/portraits/men/33.jpg",
+    rating: 3,
+    review: "It’s an alright speaker, sound’s decent but not loud enough."
+  },
+  {
+    name: "Nisha Tamang",
+    image: "https://randomuser.me/api/portraits/women/34.jpg",
+    rating: 5,
+    review: "Yo ring ekdam sundar cha! Malai dherai man parchha."
+  },
+  {
+    name: "Vivek Pandey",
+    image: "https://randomuser.me/api/portraits/men/35.jpg",
+    rating: 2,
+    review: "This bag looks good, lekin stitching weak hai."
+  },
+  {
+    name: "Lisa White",
+    image: "https://randomuser.me/api/portraits/women/36.jpg",
+    rating: 1,
+    review: "Horrible quality! It didn’t work as expected."
+  },
+  {
+    name: "Rahul Nair",
+    image: "https://randomuser.me/api/portraits/men/37.jpg",
+    rating: 5,
+    review: "This camera is a dream! Worth every rupee!"
+  },
+  {
+    name: "Sapna Karki",
+    image: "https://randomuser.me/api/portraits/women/38.jpg",
+    rating: 3,
+    review: "Yo sweater normal cha, thik thak quality."
+  },
+  {
+    name: "Manish Thakur",
+    image: "https://randomuser.me/api/portraits/men/39.jpg",
+    rating: 4,
+    review: "Yeh laptop stand acha hai, kaam aata hai daily."
+  },
+  {
+    name: "Anita Poudel",
+    image: "https://randomuser.me/api/portraits/women/40.jpg",
+    rating: 5,
+    review: "Malai yo lipstick dherai pasand cha! Color perfect cha."
+  },
+  {
+    name: "Tom Harris",
+    image: "https://randomuser.me/api/portraits/men/41.jpg",
+    rating: 2,
+    review: "This toolset is meh, some parts broke already."
+  },
+  {
+    name: "Shalini Bose",
+    image: "https://randomuser.me/api/portraits/women/42.jpg",
+    rating: 5,
+    review: "This kurta is pure love! So elegant and comfy ❤️"
+  },
+  {
+    name: "Binod KC",
+    image: "https://randomuser.me/api/portraits/men/43.jpg",
+    rating: 1,
+    review: "Yo mouse kharab cha! One week ma bhatkeko."
+  },
+  {
+    name: "Meera Jain",
+    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    rating: 4,
+    review: "Yeh bangles sundar hai, thodi pricey par acha hai."
+  },
+  {
+    name: "Chris Evans",
+    image: "https://randomuser.me/api/portraits/men/45.jpg",
+    rating: 3,
+    review: "It’s a fine jacket, but zipper feels cheap."
+  },
+  {
+    name: "Rina Bhandari",
+    image: "https://randomuser.me/api/portraits/women/46.jpg",
+    rating: 5,
+    review: "Yo hair oil ramro cha! Hair silky bancha."
+  },
+  {
+    name: "Kunal Sethi",
+    image: "https://randomuser.me/api/portraits/men/47.jpg",
+    rating: 2,
+    review: "Yeh socks thik hai, par jaldi phat gaya."
+  },
+  {
+    name: "Sophie Clark",
+    image: "https://randomuser.me/api/portraits/women/48.jpg",
+    rating: 1,
+    review: "This scarf sucks! Total rip-off."
+  },
+  {
+    name: "Gopal Adhikari",
+    image: "https://randomuser.me/api/portraits/men/49.jpg",
+    rating: 4,
+    review: "Yo cap ramro cha, style ma ekdam fit huncha."
+  },
+  {
+    name: "Divya Reddy",
+    image: "https://randomuser.me/api/portraits/women/50.jpg",
+    rating: 5,
+    review: "This lehenga is breathtaking! I’m obsessed!"
+  },
+  {
+    name: "Prakash Limbu",
+    image: "https://randomuser.me/api/portraits/men/51.jpg",
+    rating: 3,
+    review: "Yo earphones thik cha, bass thoda kam cha."
+  },
+  {
+    name: "Laura Adams",
+    image: "https://randomuser.me/api/portraits/women/52.jpg",
+    rating: 4,
+    review: "This candle smells divine, wish it lasted longer."
+  },
+  {
+    name: "Santosh Das",
+    image: "https://randomuser.me/api/portraits/men/53.jpg",
+    rating: 1,
+    review: "Yeh product bakwas hai! Don’t waste your money."
   }
 ];
+
 function openProductModal(productId) {
   const product = products.find(p => p.id === productId);
   if (!product) return;
